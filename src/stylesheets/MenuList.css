@@ -1,0 +1,26 @@
+.menu-list {
+  position: relative;
+  width: 40%;
+}
+
+.menu-item {
+  position: relative;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  border-bottom: solid black 1px;
+  border-right: solid black 1px;
+  padding: 8px 4px;
+}
+
+.menu-item__name {
+  display: inline-block;
+  width: 50%;
+}
+
+.menu-item__price {
+  display: inline-block;
+  width: calc(50% - 65px);
+}
+
