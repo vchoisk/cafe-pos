@@ -7,8 +7,8 @@ const meta = {
   ],
   coupons: [0, 0.05, 0.1],
   paymentMethods: [
-    { type: "card", discount: 0 },
-    { type: "cash", discount: 0.05 }
+    { type: "card", label: "카드", discount: 0 },
+    { type: "cash", label: "현금", discount: 0.05 }
   ]
 };
 

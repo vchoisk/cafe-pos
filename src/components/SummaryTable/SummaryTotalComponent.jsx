@@ -12,10 +12,10 @@ const SummaryTotalComponent = props => {
     const selectedMenuTotal = Object.keys(selectedMenus)
       .sort((a, b) => parseInt(a, 10) > parseInt(b, 10))
       .reduce((sum, id) => sum + menus[id][1] * selectedMenus[id], 0);
-    return (
+    return Math.floor(
       selectedMenuTotal *
-      (props.applyCoupon ? 1 - selectedCoupon : 1) *
-      (props.applyCashDiscount && selectedPaymentMethod === 1 ? 0.95 : 1)
+        (props.applyCoupon ? 1 - selectedCoupon : 1) *
+        (props.applyCashDiscount && selectedPaymentMethod === 1 ? 0.95 : 1)
     );
   };
 
@@ -29,7 +29,7 @@ const SummaryTotalComponent = props => {
               menuStore.state.menus,
               menuStore.state.selected,
               couponStore.state.coupons[couponStore.state.selected],
-              paymentMethodStore.state.selected
+              parseInt(paymentMethodStore.state.selected, 10)
             )}{" "}
             원
           </div>
