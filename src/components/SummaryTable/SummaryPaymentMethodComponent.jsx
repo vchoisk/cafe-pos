@@ -25,8 +25,10 @@ const SummaryPaymentMethodComponent = props => {
                 {paymentMethodStore.state.paymentMethods.map(
                   (paymentMethod, index) => (
                     <FormControlLabel
+                      key={index}
                       value={index.toString()}
-                      control={<Radio />}
+                      labelPlacement="start"
+                      control={<Radio color="primary"/>}
                       label={paymentMethod.label}
                     />
                   )

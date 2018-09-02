@@ -7,20 +7,22 @@ import "../../stylesheets/MenuList.css";
 
 const MenuListComponent = props => {
   return (
-    <Subscribe to={[MenuStore]}>
-      {menu => (
-        <div className="menu-list">
-          {menu.state.menus.map((menuItem, index) => (
-            <MenuItem
-              key={index}
-              id={index}
-              menu={menuItem}
-              handleAddSelectedMenu={menu.addSelectedMenu.bind(menu)}
-            />
-          ))}
-        </div>
-      )}
-    </Subscribe>
+    <div className="menu-list__container">
+      <Subscribe to={[MenuStore]}>
+        {menu => (
+          <div className="menu-list">
+            {menu.state.menus.map((menuItem, index) => (
+              <MenuItem
+                key={index}
+                id={index}
+                menu={menuItem}
+                handleAddSelectedMenu={menu.addSelectedMenu.bind(menu)}
+              />
+            ))}
+          </div>
+        )}
+      </Subscribe>
+    </div>
   );
 };
 

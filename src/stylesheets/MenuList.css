@@ -1,8 +1,11 @@
-.menu-list {
-  display: inline-block;
-  position: relative;
+.menu-list__container {
+  position: absolute;
   width: 40%;
   height: 100%;
+}
+
+.menu-list {
+  position: relative;
 }
 
 .menu-item {
@@ -12,7 +15,6 @@
   font-weight: 500;
   width: 100%;
   border-bottom: solid black 1px;
-  border-right: solid black 1px;
   padding: 8px 0;
 }
 

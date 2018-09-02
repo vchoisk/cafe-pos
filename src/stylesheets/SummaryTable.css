@@ -1,8 +1,13 @@
-.summary-table {
-  display: inline-block;
-  position: relative;
+.summary-table__container {
+  position: absolute;
   width: 60%;
+  left: 40%;
   height: 100%;
+}
+
+.summary-table {
+  position: relative;
+  border-left: solid black 1px;
 }
 
 .summary-total {

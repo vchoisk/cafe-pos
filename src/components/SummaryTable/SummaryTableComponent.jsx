@@ -7,10 +7,12 @@ import SummaryPaymentMethod from "./SummaryPaymentMethodComponent.jsx";
 
 const SummaryTableComponent = props => {
   return (
+    <div className="summary-table__container">
     <div className="summary-table">
       <SummaryMenuList />
       <SummaryCoupon />
       <SummaryPaymentMethod />
+    </div>
     </div>
   );
 };

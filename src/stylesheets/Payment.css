@@ -1,0 +1,25 @@
+.payment__container {
+  position: absolute;
+  top: 551px;
+}
+
+.payment {
+  position: relative;
+  width: 100vw;
+}
+
+.payment__text,
+.payment__button-container {
+  display: inline-block;
+  padding: 16px 0;
+  font-size: 20px;
+}
+
+.payment__text {
+  width: 80%;
+  text-align: center;
+}
+
+.payment__button-container {
+  width: 20%;
+}
