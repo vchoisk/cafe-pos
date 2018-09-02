@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
 import "../../stylesheets/SummaryTable.css";
 
 const SummaryTableComponent = props => {
@@ -19,6 +20,18 @@ const SummaryTableComponent = props => {
       </div>
       <div className="summary-menu-item__total">
         {getTotalValue(props.menu, props.count)} 원
+        <div className="summary-menu-item__delete">
+          <Button
+            className="summary-menu-item__delete-button"
+            variant="contained"
+            color="secondary"
+            onClick={() => {
+              props.handleDelete(props.id);
+            }}
+          >
+            X
+          </Button>
+        </div>
       </div>
     </div>
   );

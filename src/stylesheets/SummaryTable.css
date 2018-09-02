@@ -17,16 +17,13 @@
   border-right: none;
 }
 
-.menu-label,
-.summary-menu-item__name {
+.menu-label {
   width: calc(40% - 1px);
 }
-.count-label,
-.summary-menu-item__count {
+.count-label {
   width: calc(30% - 1px);
 }
-.price-label,
-.summary-menu-item__total {
+.price-label {
   width: 30%;
 }
 
@@ -39,25 +36,27 @@
 .summary-menu-item__count,
 .summary-menu-item__total {
   display: inline-block;
-  text-align: center;
   line-height: 52px;
+  padding-left: 8px;
 }
 
 .summary-menu-item__name {
-  text-align: left;
+  width: calc(40% - 8px);
 }
 
-.summary-menu-item__count {
+.summary-menu-item__count,
+.summary-menu-item__price {
   position: relative;
+  width: calc(30% - 8px);
 }
 
-.count__value,
-.count__adjust {
+.count__value {
   display: inline-block;
 }
-.count__adjust {
-  margin-left: 20px;
+.count__adjust,
+.summary-menu-item__delete {
   position: absolute;
+  top: 0;
   right: 0;
 }
 .count__adjust-up,
@@ -71,4 +70,8 @@
 .count__adjust-up {
   margin-top: 4px;
   margin-bottom: 4px;
+}
+
+.summary-menu-item__delete-button {
+  padding: 0;
 }
