@@ -4,9 +4,11 @@ import { Subscribe } from "unstated";
 import Button from "@material-ui/core/Button";
 import { MenuStore, CouponStore, PaymentMethodStore } from "../../stores";
 import PaymentDialog from "./PaymentDialogComponent.jsx";
+import { mockCardPayment } from "../../api/paymentAPI.js";
 
 class PaymentComponent extends React.Component {
   state = {
+    pendingCardPayment: false,
     dialogOpen: false
   };
 
@@ -19,6 +21,26 @@ class PaymentComponent extends React.Component {
   handleCloseDialog = () => {
     this.setState({
       dialogOpen: false
+    });
+  };
+
+  handleCardPayment = () => {
+    this.setState({
+      pendingCardPayment: true
+    });
+
+    this.handleOpenDialog();
+
+    mockCardPayment(() => {
+      this.setState({
+        pendingCardPayment: false
+      });
+    });
+  };
+
+  handleCompletePayment = cbArray => {
+    cbArray.forEach(cb => {
+      cb();
     });
   };
 
@@ -81,7 +103,19 @@ class PaymentComponent extends React.Component {
                   variant="contained"
                   color="primary"
                   size="large"
-                  onClick={this.handleOpenDialog}
+                  disabled={
+                    calculatedValue(
+                      menuStore.state.menus,
+                      menuStore.state.selected,
+                      couponStore.state.coupons[couponStore.state.selected],
+                      parseInt(paymentMethodStore.state.selected, 10)
+                    ) === 0
+                  }
+                  onClick={
+                    paymentMethodStore.state.selected === "0"
+                      ? this.handleCardPayment
+                      : this.handleOpenDialog
+                  }
                 >
                   결제
                 </Button>
@@ -99,7 +133,28 @@ class PaymentComponent extends React.Component {
                 couponStore.state.coupons[couponStore.state.selected],
                 parseInt(paymentMethodStore.state.selected, 10)
               )}
+              pendingCardPayment={this.state.pendingCardPayment}
               handleClose={this.handleCloseDialog}
+              handleCompletePayment={() => {
+                const resetValuesCallbackArray = [];
+                resetValuesCallbackArray.push(
+                  menuStore.resetSelectedMenu.bind(menuStore)
+                );
+                resetValuesCallbackArray.push(
+                  paymentMethodStore.selectPaymentMethod.bind(
+                    paymentMethodStore,
+                    "0"
+                  )
+                );
+                resetValuesCallbackArray.push(
+                  couponStore.selectCoupon.bind(couponStore, 0)
+                );
+
+                this.handleCompletePayment(resetValuesCallbackArray);
+
+                this.handleCloseDialog();
+              }}
+              handleCancelPayment={this.handleCloseDialog}
             />
           </div>
         )}

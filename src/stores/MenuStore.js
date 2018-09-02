@@ -43,6 +43,12 @@ class MenuStore extends Container {
       selected: newSelected
     });
   };
+
+  resetSelectedMenu = () => {
+    this.setState({
+      selected: {}
+    });
+  };
 }
 
 export default MenuStore;

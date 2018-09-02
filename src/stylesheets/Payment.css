@@ -1,11 +1,11 @@
 .payment__container {
   position: absolute;
   top: 551px;
+  width: 100%;
 }
 
 .payment {
   position: relative;
-  width: 100vw;
 }
 
 .payment__text,
@@ -22,4 +22,32 @@
 
 .payment__button-container {
   width: 20%;
+}
+
+.payment-dialog__details {
+  min-width: 468px;
+}
+
+.payment-dialog__detail {
+  display: inline-block;
+  min-width: 140px;
+  text-align: center;
+  padding: 8px 0;
+  margin: 0 8px;
+}
+
+.payment-dialog__total {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.payment-dialog__pending {
+  padding: 0 195px;
+}
+
+.payment-dialog__buttons {
+  padding: 8px 0 24px 0;
+  text-align: center;
 }
