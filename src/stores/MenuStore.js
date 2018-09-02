@@ -9,19 +9,28 @@ class MenuStore extends Container {
   };
 
   addSelectedMenu = id => {
+    const newSelected = Object.assign({}, this.state.selected);
+
+    newSelected[id] =
+      isInteger(newSelected[id]) && newSelected[id] > 0
+        ? newSelected[id] + 1
+        : 1;
+
     this.setState({
-      selected:
-        isInteger(this.state.selected[id]) && this.state.selected[id] > 0
-          ? Object.assign({}, this.state.selected, {
-              [id]: this.state.selected[id] + 1
-            })
-          : Object.assign({}, this.state.selected, { [id]: 1 })
+      selected: newSelected
     });
   };
 
   decrementSelectedMenu = id => {
+    const newSelected = Object.assign({}, this.state.selected);
+
+    newSelected[id] =
+      isInteger(newSelected[id]) && newSelected[id] > 0
+        ? newSelected[id] - 1
+        : 0;
+
     this.setState({
-      selected: this.state.selected[id] !== 0 && this.state.selected[id] - 1
+      selected: newSelected
     });
   };
 

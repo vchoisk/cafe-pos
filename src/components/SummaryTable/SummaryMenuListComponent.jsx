@@ -11,7 +11,7 @@ const SummaryTableComponent = props => {
         <div className="summary-menu">
           <div className="summary-menu__label-row">
             <div className="summary-menu__label menu-label">메뉴</div>
-            <div className="summary-menu__label amount-label">수량</div>
+            <div className="summary-menu__label count-label">수량</div>
             <div className="summary-menu__label price-label">가격</div>
           </div>
           <div className="summary-menu__list">
