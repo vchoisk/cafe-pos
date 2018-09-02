@@ -1,14 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
+
+import MenuList from "./MenuList/MenuListComponent.jsx";
+import Summary from "./Summary/SummaryComponent.jsx";
+
 import "../stylesheets/App.css";
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">Cafe POS</header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="app">
+        <header className="header">Cafe POS</header>
+        <div className="content">
+          <MenuList />
+          <Summary />
+        </div>
       </div>
     );
   }
