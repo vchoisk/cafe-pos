@@ -9,7 +9,7 @@ class CouponStore extends Container {
 
   selectCoupon = id => {
     this.setState({
-      selected: this.coupons[id]
+      selected: id
     });
   };
 }

@@ -10,16 +10,30 @@
 }
 
 .summary-total__label,
-.summary-total__value {
+.summary-total__value,
+.summary-coupon__label,
+.summary-coupon__selector {
   display: inline-block;
   padding: 12px 0;
   border-bottom: solid black 1px;
 }
 
-.summary-total__label {
+.summary-total__label,
+.summary-coupon__label {
   width: calc(70% - 1px);
 }
 
-.summary-total__value {
+.summary-total__value,
+.summary-coupon__selector {
   width: 30%;
+}
+
+.summary-coupon__select-row {
+  text-align: center;
+  border-bottom: solid lightgrey 1px;
+}
+
+.summary-coupon__label,
+.summary-coupon__selector {
+  border-bottom: none;
 }

@@ -28,7 +28,7 @@ const SummaryTotalComponent = props => {
             {calculatedValue(
               menuStore.state.menus,
               menuStore.state.selected,
-              couponStore.state.selected,
+              couponStore.state.coupons[couponStore.state.selected],
               paymentMethodStore.state.selected
             )}{" "}
             원
