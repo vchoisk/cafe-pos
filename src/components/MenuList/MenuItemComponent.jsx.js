@@ -15,7 +15,7 @@ const MenuItemComponent = props => {
         className="menu-item__button"
         variant="contained"
         onClick={() => {
-          props.addSelectedMenu(props.id);
+          props.handleAddSelectedMenu(props.id);
         }}
       >
         추가

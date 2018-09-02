@@ -21,6 +21,16 @@ class MenuStore extends Container {
       selected: this.state.selected[id] !== 0 && this.state.selected[id] - 1
     });
   };
+
+  deleteSelectedMenu = id => {
+    const newSelected = Object.assign({}, this.state.selected);
+
+    delete newSelected[id];
+
+    this.setState({
+      selected: newSelected
+    });
+  };
 }
 
 export default MenuStore;

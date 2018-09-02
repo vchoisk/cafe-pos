@@ -1,7 +1,7 @@
 import React from "react";
 import { Subscribe } from "unstated";
 import MenuItem from "./MenuItemComponent.jsx";
-import MenuStore from "../../stores/MenuStore.jsx";
+import MenuStore from "../../stores/MenuStore.js";
 
 import "../../stylesheets/MenuList.css";
 
@@ -15,7 +15,7 @@ const MenuListComponent = props => {
               key={index}
               id={index}
               menu={menuItem}
-              addSelectedMenu={menu.addSelectedMenu.bind(menu)}
+              handleAddSelectedMenu={menu.addSelectedMenu.bind(menu)}
             />
           ))}
         </div>

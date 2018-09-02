@@ -5,10 +5,10 @@
     ["카페라떼", 1500],
     ["카라멜 마끼아또", 2000]
   ],
-  "coupons": [0.05, 0.1],
+  "coupons": [0, 0.05, 0.1],
   "paymentMethods": [
-    { "type": "cash", "discount": 0.05 },
-    { "type": "card", "discount": 0 }
+    { "type": "card", "discount": 0 },
+    { "type": "cash", "discount": 0.05 }
   ]
 }
 
