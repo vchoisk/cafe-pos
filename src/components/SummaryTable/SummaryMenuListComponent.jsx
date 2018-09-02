@@ -16,7 +16,7 @@ const SummaryTableComponent = props => {
           </div>
           <div className="summary-menu__list">
             {Object.keys(menuStore.state.selected)
-              .sort((a, b) => parseInt(a, 10) < parseInt(b, 10))
+              .sort((a, b) => parseInt(a, 10) > parseInt(b, 10))
               .map(id => (
                 <SummrayMenuItem
                   key={id}

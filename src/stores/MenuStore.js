@@ -1,5 +1,5 @@
 import { Container } from "unstated";
-import isEmpty from "lodash/isEmpty";
+import isInteger from "lodash/isInteger";
 import metaJSON from "../assets/meta.js";
 
 class MenuStore extends Container {
@@ -10,9 +10,12 @@ class MenuStore extends Container {
 
   addSelectedMenu = id => {
     this.setState({
-      selected: !isEmpty(this.state.selected[id])
-        ? this.state.selected[id] + 1
-        : Object.assign({}, this.state.selected, { [id]: 1 })
+      selected:
+        isInteger(this.state.selected[id]) && this.state.selected[id] > 0
+          ? Object.assign({}, this.state.selected, {
+              [id]: this.state.selected[id] + 1
+            })
+          : Object.assign({}, this.state.selected, { [id]: 1 })
     });
   };
 

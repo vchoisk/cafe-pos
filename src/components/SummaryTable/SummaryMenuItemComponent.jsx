@@ -1,15 +1,15 @@
 import React from "react";
-import { Subscribe } from "unstated";
 import "../../stylesheets/SummaryTable.css";
 
-import SummaryMenuList from "./SummaryMenuListComponent.jsx";
-
 const SummaryTableComponent = props => {
+  const getTotalValue = (menu, count) => menu[1] * count;
   return (
-    <div className="summary-table">
-      <SummaryMenuList />
-      <div className="summary-table">Summary-table</div>
-      <div className="summary-table">Summary</div>
+    <div className="summary-menu-item">
+      <div className="summary-menu-item__name">{props.menu[0]}</div>
+      <div className="summary-menu-item__count">{props.count}</div>
+      <div className="summary-menu-item__total">
+        {getTotalValue(props.menu, props.count)}
+      </div>
     </div>
   );
 };

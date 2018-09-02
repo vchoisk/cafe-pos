@@ -3,7 +3,7 @@ import React from "react";
 import MenuList from "./MenuList/MenuListComponent.jsx";
 import SummaryTable from "./SummaryTable/SummaryTableComponent.jsx";
 import { Provider } from "unstated";
-import stores from "../stores";
+import * as stores from "../stores";
 
 import "../stylesheets/App.css";
 
