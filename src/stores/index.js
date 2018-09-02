@@ -1,5 +1,5 @@
 import MenuStore from "./MenuStore.js";
 import CouponStore from "./CouponStore.js";
-import PaymentMethod from "./PaymentMethodStore.js";
+import PaymentMethodStore from "./PaymentMethodStore.js";
 
-export { MenuStore, CouponStore, PaymentMethod };
+export { MenuStore, CouponStore, PaymentMethodStore };

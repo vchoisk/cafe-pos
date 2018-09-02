@@ -37,18 +37,7 @@ const SummaryTableComponent = props => {
               />
             ))}
           </div>
-          <SummrayTotal
-            label="상품가격 합계"
-            value={convertObjectToKeysAndSort(
-              menuStore.state.selected,
-              (a, b) => parseInt(a, 10) > parseInt(b, 10)
-            ).reduce(
-              (sum, id) =>
-                sum +
-                menuStore.state.menus[id][1] * menuStore.state.selected[id],
-              0
-            )}
-          />
+          <SummrayTotal label="상품가격 합계" />
         </div>
       )}
     </Subscribe>

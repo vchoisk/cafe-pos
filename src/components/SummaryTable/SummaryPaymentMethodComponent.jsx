@@ -1,10 +1,11 @@
 import React from "react";
+import SummrayTotal from "./SummaryTotalComponent.jsx";
 
 const SummaryPaymentMethodComponent = props => {
   return (
-    <div className="summary-coupon">
-      <div className="summary-coupon">Summary-coupon</div>
-      <div className="summary-coupon">Summary</div>
+    <div className="summary-payment-method">
+      <div className="summary-payment-method">Summary-coupon</div>
+      <SummrayTotal label="총 합계" applyCoupon applyCashDiscount />
     </div>
   );
 };

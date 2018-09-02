@@ -3,13 +3,14 @@ import "../../stylesheets/SummaryTable.css";
 
 import SummaryMenuList from "./SummaryMenuListComponent.jsx";
 import SummaryCoupon from "./SummaryCouponComponent.jsx";
+import SummaryPaymentMethod from "./SummaryPaymentMethodComponent.jsx";
 
 const SummaryTableComponent = props => {
   return (
     <div className="summary-table">
       <SummaryMenuList />
       <SummaryCoupon />
-      <div className="summary-table">Summary</div>
+      <SummaryPaymentMethod />
     </div>
   );
 };

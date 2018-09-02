@@ -1,7 +1,7 @@
 import React from "react";
 import { Subscribe } from "unstated";
 import MenuItem from "./MenuItemComponent.jsx";
-import MenuStore from "../../stores/MenuStore.js";
+import { MenuStore } from "../../stores";
 
 import "../../stylesheets/MenuList.css";
 

@@ -1,11 +1,41 @@
 import React from "react";
+import { Subscribe } from "unstated";
+import { MenuStore, CouponStore, PaymentMethodStore } from "../../stores";
 
 const SummaryTotalComponent = props => {
+  const calculatedValue = (
+    menus,
+    selectedMenus,
+    selectedCoupon,
+    selectedPaymentMethod
+  ) => {
+    const selectedMenuTotal = Object.keys(selectedMenus)
+      .sort((a, b) => parseInt(a, 10) > parseInt(b, 10))
+      .reduce((sum, id) => sum + menus[id][1] * selectedMenus[id], 0);
+    return (
+      selectedMenuTotal *
+      (props.applyCoupon ? 1 - selectedCoupon : 1) *
+      (props.applyCashDiscount && selectedPaymentMethod === 1 ? 0.95 : 1)
+    );
+  };
+
   return (
-    <div className="summary-total">
-      <div className="summary-total__label">{props.label}</div>
-      <div className="summary-total__value">{props.value}</div>
-    </div>
+    <Subscribe to={[MenuStore, CouponStore, PaymentMethodStore]}>
+      {(menuStore, couponStore, paymentMethodStore) => (
+        <div className="summary-total">
+          <div className="summary-total__label">{props.label}</div>
+          <div className="summary-total__value">
+            {calculatedValue(
+              menuStore.state.menus,
+              menuStore.state.selected,
+              couponStore.state.selected,
+              paymentMethodStore.state.selected
+            )}{" "}
+            원
+          </div>
+        </div>
+      )}
+    </Subscribe>
   );
 };
 
